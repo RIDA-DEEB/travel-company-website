@@ -1,0 +1,32 @@
+{
+  "name": "saferni",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "webpack serve --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^4.6.0",
+    "css-loader": "^5.2.4",
+    "expose-loader": "^2.0.0",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^5.3.1",
+    "jquery": "^3.6.0",
+    "mini-css-extract-plugin": "^1.5.0",
+    "popper.js": "^1.16.1",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "file-loader": "^6.2.0",
+    "sass": "^1.29.0"
+  }
+}
