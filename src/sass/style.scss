@@ -266,66 +266,11 @@ section.services {
     color: grey;
     padding: 0 5px;
 }
-.text-egy {
-    direction: rtl !important;
-    .custom-breadcrumb {
-        background-color: transparent !important;
-        a {
-            color: grey !important;
-            text-decoration: none !important;
-            &:hover {
-                color: $egypt-color !important;
-            }
-        }
-        .active {
-            color: rgb(0, 0, 0) !important;
-        }
-    }
-    h1 {
-        padding-left: 80px;
-        color: $egypt-color;
-        span {
-            font-size: 29px;
-        }
-    }
-    p {
-       text-align: right;
-        padding: 50px 100px 50px 100px;
-        span {
-            color: $egypt-color;
-            font-size: 30px;
-        }
-    }
-}
+
 #ist-footer{
     background-color: $ist-color;
 }
-#slider1 {
-    position: relative;
-    margin: auto;
-    margin-top: 20px;
-    width: 62%;
-    height: 500px;
-    border: 5px black solid;
-    overflow: hidden;
-    #wrapper {
-        width: 800%;
-        height: 100%;
-        transition: transform 0.5s ease-in-out;
-        .content {
-            float: right;
-            width: 12.5%;
-            height: 100%;
-            background-repeat: no-repeat;
-            position: relative;
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-}
-#slider2 {
+@mixin slider {
     position: relative;
     margin: auto;
     margin-top: 20px;
@@ -383,7 +328,7 @@ section.services {
         }
     }
 }
-.text-ist {
+@mixin text ($color) {
     direction: rtl !important;
     .custom-breadcrumb {
         background-color: transparent !important;
@@ -391,7 +336,7 @@ section.services {
             color: grey !important;
             text-decoration: none !important;
             &:hover {
-                color: $ist-color !important;
+                color: $color !important;
             }
         }
         .active {
@@ -400,7 +345,7 @@ section.services {
     }
     h1 {
         padding-left: 80px;
-        color: $ist-color;
+        color: $color;
         span {
             font-size: 29px;
         }
@@ -409,11 +354,22 @@ section.services {
        text-align: right;
         padding: 50px 100px 50px 100px;
         span {
-            color: $ist-color;
+            color: $color;
             font-size: 30px;
         }
     }
-   
+}
+#slider1 { 
+   @include slider;
+}
+#slider2 {
+    @include slider;
+}
+.text-egy {
+    @include text ($egypt-color);
+}
+.text-ist {
+    @include text ($ist-color);
 }
 /************************************* sign-up page****************************************/
 #sign {
@@ -461,14 +417,9 @@ section.services {
             right: 280px !important;
         }
     }
-    .text-egy {
+    .text-egy , .text-ist {
         h1 {
          padding-right: 200px;
-        }
-    }
-    .text-ist {
-        h1 {
-            padding-right: 200px;
         }
     }
     #slider1,#slider2 {
@@ -515,12 +466,7 @@ section.services {
             right: 315px !important;
         }
     }
-    .text-egy {
-        h1 {
-            padding-right: 90px !important;
-        }
-    }
-    .text-ist {
+    .text-egy , .text-ist {
         h1 {
             padding-right: 90px !important;
         }
@@ -587,16 +533,7 @@ section.services {
             right: 215px !important;
         }
     }
-    .text-egy {
-        h1 {
-            padding-right: 10px !important;
-            font-size: 32px;
-            span{
-                font-size: 22px;
-            }
-        }
-    }
-    .text-ist {
+    .text-egy , .text-ist{
         h1 {
             padding-right: 10px !important;
             font-size: 32px;
